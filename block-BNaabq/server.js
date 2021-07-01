@@ -12,7 +12,9 @@ app.use(logger("dev"))
 app.use(cookieParser)
 
 app.use((req,res,next)=>{
+<<<<<<< HEAD
 res.cookie("name","Priyanka")
+
 next()
 })
 
@@ -38,4 +40,4 @@ app.post("/json",(req,res)=>{
 
 app.listen(4000,()=>{
     console.log(`server is listening at port ${port}`)
-})
+});
