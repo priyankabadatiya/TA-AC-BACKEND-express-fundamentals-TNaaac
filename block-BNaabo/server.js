@@ -20,7 +20,7 @@ app.get("/", (req,res)=>{
     })
 
  app.get("/contact", (req,res)=>{
-res.send("welcome")
+    console.log(req.body)
 })
             
 app.post("/json",(req,res)=>{
