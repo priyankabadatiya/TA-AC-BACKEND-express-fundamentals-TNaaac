@@ -3,23 +3,15 @@ var app = express();
 let logger = require('morgan');
 let cookieparser = require('cookie-parser');
 
-
-app.use(logger("dev"))
-app.use(express.json())
 app.use(express.json());
 app.use(express.urlencoded({extended: false}));
+app.use(logger("dev"))
+app.use(cookieparser())
 
 app.use((req, res, next) => {
     res.cookie('username', "Priyanka");
     next();
   });
-
-  app.use((req, res, next) => {
-    if(req.url === '/admin') {
-        next('Unauthorized');
-    }
-    next();
-})
 
 app.get('/', (req, res) => {
     res.type('html').send('<h2>Welcome to Express</h2>');  
