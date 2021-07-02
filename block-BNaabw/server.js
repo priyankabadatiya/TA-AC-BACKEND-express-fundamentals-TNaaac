@@ -1,7 +1,7 @@
 let express = require('express');
-let app = express();
 let logger = require('morgan');
 let cookieparser = require('cookie-parser');
+let app = express();
 
 app.use(express.json());
 app.use(express.urlencoded({extended: false}));
